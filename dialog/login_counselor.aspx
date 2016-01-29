@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login_counselor.aspx.cs" Inherits="dialog_login_counselor" %>

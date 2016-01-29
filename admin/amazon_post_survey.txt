@@ -1,0 +1,13 @@
+﻿Dear _NAME_FIRST_,
+
+We are attaching a $25 Amazon.com gift certificate code to thank you for completing the follow-up questionnaire for e-Bridge to well being. Your Amazon.com gift card is: _AMAZON_GIFT_CODE_.
+
+Thank you again for your participation in our study!  
+
+Sincerely,
+
+Cheryl King, Ph.D.
+
+Professor of Psychiatry and Psychology
+Director of the Institute for Human Adjustment
+University of Michigan

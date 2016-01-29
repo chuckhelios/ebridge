@@ -1,0 +1,118 @@
+﻿<table><tr><td><img src='./images/PAI.jpg' width='400px' height='60px'></td><td>_PROGRESSION_</td></tr></table><p>
+
+    <div style='padding-left:15px'>
+        <form method='post' action='action.aspx?p=data'>
+            _INPUT_
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_PAI1' valign='top' style='color:#0066CC;font-weight:bold'>1.</td><td colspan='2' id='Q_PAI1' class="question nonreq" style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'>In the past year, did you experience any pain that persisted for 3 months or longer (e.g., throbbing, shooting, stabbing, sharp, cramping, gnawing, hot-burning, aching, heavy, tender, tingling, splitting, etc.)</tr>
+
+            _BEGIN_ITEM_
+            <td><input name='PAI1' id='PAI1_0' onclick="document.getElementById('Q1Q1').style.display = 'block'; document.getElementById('PAI2_0').checked = false; document.getElementById('Q_PAI1').style.color = 'black'; document.getElementById('N_PAI1').style.color = 'black';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('PAI1_0').click()" _REGULAR_STYLE_>Yes</span>
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td><input name='PAI1' id='PAI1_1' onclick="document.getElementById('Q1Q1').style.display = 'none'; document.getElementById('PAI2_0').checked = true; document.getElementById('Q_PAI1').style.color = 'black'; document.getElementById('N_PAI1').style.color = 'black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('PAI1_1').click()" _REGULAR_STYLE_>No</span>
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td><input name='PAI1' class="nonrequired" id='PAI1_H' type="radio" style="display:none" value='.'></td>
+            <td style='padding-left:3px'>
+            _END_ITEM_
+
+            _END_QUESTION_
+
+            <div id='Q1Q1' style='display:none; padding-left:20px'>
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_PAI2' valign='top' style='color:#0066CC;font-weight:bold'>1a.</td><td colspan='2' id='Q_PAI2' class="question nonreq" style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'> Please select 1 choice that best describes your experience.</td></tr>
+
+            _BEGIN_ITEM_
+            <td><input name='PAI2' id='PAI2_0' onclick="document.getElementById('Q_PAI2').style.color='black';document.getElementById('N_PAI2').style.color='black';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+            <span onclick="document.getElementById('PAI2_0').click()" _REGULAR_STYLE_>From NO apparent cause, Intermittently</span>
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td><input name='PAI2' id='PAI2_1' onclick="document.getElementById('Q_PAI2').style.color='black';document.getElementById('N_PAI2').style.color='black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+            <span onclick="document.getElementById('PAI2_1').click()" _REGULAR_STYLE_>From NO apparent cause, Almost Everyday</span>
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td><input name='PAI2' id='PAI2_2' onclick="document.getElementById('Q_PAI2').style.color='black';document.getElementById('N_PAI2').style.color='black';" type='radio' value='2'></td>
+            <td style='padding-left:3px'>
+            <span onclick="document.getElementById('PAI2_2').click()" _REGULAR_STYLE_>From a known/specific cause, Intermittently </span>
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td><input name='PAI2' id='PAI2_3' onclick="document.getElementById('Q_PAI2').style.color='black';document.getElementById('N_PAI2').style.color='black';" type='radio' value='3'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('PAI2_3').click()" _REGULAR_STYLE_>From a known/specific cause, Almost Everyday</span>
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td><input name='PAI2' class="nonrequired" id='PAI2_H' type="radio" style="display:none" value='.'></td>
+            <td style='padding-left:3px'>
+            _END_ITEM_
+
+            _END_QUESTION_
+
+    </div>
+    <table id='M' cellpadding='0' cellspacing='0' style='display:none;font-family:arial;font-size:12px;padding-right:10px;padding-bottom:10px'><tr height='20px'><td style='padding:12px;color:#FFFFFF;background-color:#009900;font-weight:bold'>We noticed that you did not answer all of the questions. You may answer them now if you are willing to do so, or you can click NEXT again to proceed to the next section of the survey.</td></tr></table>
+    _SUBMIT_BUTTON_NOT_REQUIRED_
+
+    </form>
+    </div>
+
+    <script type='text/javascript'>
+        var _missing = 0;
+
+        function __validatePage(Color) {
+            var globalPass = true;
+
+            localPass = false; for (var i = 0; i < document.forms[0].PAI1.length; i++) { if (document.forms[0].PAI1[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_PAI1').style.color = Color; document.getElementById('N_PAI1').style.color = Color; }
+            else { document.getElementById('Q_PAI1').style.color = 'black'; document.getElementById('N_PAI1').style.color = 'black'; }
+
+            if (!document.getElementById("PAI1_1").checked) {
+
+                localPass = false; for (var i = 0; i < document.forms[0].PAI2.length; i++) { if (document.forms[0].PAI2[i].checked == true) { localPass = true; break; } }
+                if (localPass == false) { globalPass = false; document.getElementById('Q_PAI2').style.color = Color; document.getElementById('N_PAI2').style.color = Color; }
+                else { document.getElementById('Q_PAI2').style.color = 'black'; document.getElementById('N_PAI2').style.color = 'black'; }
+            }
+            return globalPass;
+        }
+
+        function __clearHidden(self) {
+            $(".question.nonreq").each(
+                function () {
+                    $(this).parent().parent().find("input").each(
+                    function () { if ($(this).attr('id') != self.id) $(this).prop('checked', false) })
+                })
+        }
+
+        // goes through each element with class of question AND nonreq,
+        // for each question find the children that are inputs, loop through each and if all are unchecked, check the invisible one 
+        // which has a class of nonrequired. 
+        function __validateNonRequired() {
+            $(".question.nonreq").each(
+                function () {
+                    //alert($(this).attr('id'));
+                    complete = false;
+                    $(this).parent().parent().find("input").each(
+                        function () {
+                            //alert($(this).attr('id'));
+                            if ($(this).prop('checked')) complete = true;
+                        });
+                    if (!complete) $(this).parent().parent().find("input.nonrequired").prop('checked', true);
+                });
+
+        }
+    </script>

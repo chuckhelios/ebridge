@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="slider_test.aspx.cs" Inherits="dialog_slider_test" %>

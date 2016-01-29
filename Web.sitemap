@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  <siteMapNode title="Home">
+    <siteMapNode title="Admin">
+      <siteMapNode title="Hardware" url="Default.aspx?node=hardware">
+      </siteMapNode>
+      <siteMapNode title="Software" url="Default.aspx?node=software">
+      </siteMapNode>
+      <siteMapNode title="Books" url="Default.aspx?node=books">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Survey">
+      <siteMapNode title="Survey 1" url="~/survey/index.aspx">
+      </siteMapNode>
+      <siteMapNode title="Survey 2" url="~/survey2/index.aspx">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Dialog List" url="~/dialog/list_alt.aspx" roles="counselor">
+      <siteMapNode title="Dialog - Counselor" url="~/dialog/dialog_c.aspx" roles="counselor">
+      </siteMapNode>
+      <siteMapNode title="Dialog - Participant" url="~/dialog/dialog_p.aspx" roles="participant">
+      </siteMapNode>
+      <siteMapNode title="Change Hours" url="~/dialog/change_hours.aspx" roles="counselor">
+      </siteMapNode>
+      <siteMapNode title="Send Email" url="~/dialog/email.aspx" roles="counselor">
+      </siteMapNode>
+      <siteMapNode title="Survey Status" url="~/dialog/survey_status.aspx" roles="counselor">
+      </siteMapNode>
+      <siteMapNode title="Change Resource Links" url ="~/dialog/resource_links.aspx" roles="counselor">
+      </siteMapNode>
+      <siteMapNode title="Add Resource Link" url ="~/dialog/add_link.aspx">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Chat" url="~/chat/chat_input.aspx" roles="counselor, participant">
+      <siteMapNode title="Schedule" url="~/chat/schedule.aspx" roles="participant" >
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode title="Research" url="~/research/research.aspx">
+    </siteMapNode>
+    <siteMapNode title="Login" url="~/dialog/login_alt.aspx" roles ="anon, participant, counselor">
+    </siteMapNode>
+    <siteMapNode title="Logout" roles ="participant, counselor">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

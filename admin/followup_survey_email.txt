@@ -1,0 +1,21 @@
+﻿Dear _NAME_FIRST_,
+
+Thank you for participating several weeks ago in the online research study: e-Bridge to Health! We are contacting you now to ask you to complete the brief follow-up questionnaire which should take 5-7 minutes of your time. We are including a $10.00 Amazon.com gift card to thank you for your earlier participation, and if you complete the follow-up questionnaire linked below you will receive an additional $25 gift card. Your participation will help us learn more about how to provide effective programs for students.
+
+To complete the questionnaire please click on the following link:
+
+_URL_
+
+Your Amazon.com gift card is: 
+
+_AMAZON_GIFT_CODE_
+
+Thanks you for your participation in our study!  
+
+Sincerely,
+
+Cheryl King, Ph.D.
+
+Professor of Psychiatry and Psychology
+Director of the Institute for Human Adjustment
+University of Michigan

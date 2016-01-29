@@ -1,0 +1,78 @@
+﻿<TABLE><TR><TD><IMG src='./question/DEM.png' width='400px' height='60px'></TD><TD>_PROGRESSION_</TD></TR></TABLE><P>
+
+<DIV style='padding-left:15px'>
+<FORM method='post' action='action.aspx?p=data'>_INPUT_
+
+_BEGIN_QUESTION_
+
+	<TR><TD id='N_DEM1' valign='top' style='color:#0066CC;font-weight:bold'>1.</TD><TD colspan='2' id='Q_DEM1' style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'>How old are you?</TD></TR>
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_0' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='0'></TD>
+	<TD width='100%' style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_0').click()" _REGULAR_STYLE_>18 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_1' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='1'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_1').click()" _REGULAR_STYLE_>19 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_2' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='2'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_2').click()" _REGULAR_STYLE_>20 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_3' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='3'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_3').click()" _REGULAR_STYLE_>21 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_4' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='4'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_4').click()" _REGULAR_STYLE_>22 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_5' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='5'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_5').click()" _REGULAR_STYLE_>23-25 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_6' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='6'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_6').click()" _REGULAR_STYLE_>26-30 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_7' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='7'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_7').click()" _REGULAR_STYLE_>31-35 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_8' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='8'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_8').click()" _REGULAR_STYLE_>36-40 years old</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD><INPUT name='DEM1' id='DEM1_9' onclick="document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';" type='radio' value='9'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('DEM1_9').click()" _REGULAR_STYLE_>41+ years old</SPAN>
+	_END_ITEM_
+
+_END_QUESTION_
+
+_SUBMIT_BUTTON_REQUIRED_
+
+</FORM>
+</DIV>
+
+<SCRIPT type='text/javascript'>
+function __validatePage(Color)
+{
+	var globalPass = true;
+
+	localPass=false; for (var i=0; i<document.forms[0].DEM1.length; i++){if (document.forms[0].DEM1[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_DEM1').style.color=Color;document.getElementById('N_DEM1').style.color=Color;}
+	else {document.getElementById('Q_DEM1').style.color='black';document.getElementById('N_DEM1').style.color='black';}
+
+	return globalPass;
+}
+</SCRIPT>

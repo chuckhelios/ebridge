@@ -1,0 +1,247 @@
+﻿<table><tr><td><img src='./images/NSSI.jpg' width='400px' height='60px'></td><td>_PROGRESSION_</td></tr></table><p>
+
+    <div style='padding-left:15px'>
+        <form method='post' action='action.aspx?p=data'>
+            _INPUT_
+
+            <!--the new questions from mental health service utilization, all to be made hard prompts-->
+            <!--question 1, 1 subsections-->
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_NSSI1' valign='top' style='color:#0066CC;font-weight:bold'>1.</td><td colspan='2' id='Q_NSSI1' class="question nonreq" style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'><u>In the past 12 months</u>, have you ever harmed or hurt your body on purpose, such as cutting or burning your skin, or hitting yourself, without wanting to die?</td></tr>
+
+            _BEGIN_ITEM_
+            <td><input name='NSSI1' id='NSSI1_0' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1').style.color = 'black';"  type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1_0').click()" _REGULAR_STYLE_>0 times</span>
+            _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1' id='NSSI1_1' onclick="document.getElementById('Q_NSSI1').style.color = 'black'; document.getElementById('N_NSSI1').style.color = 'black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1_1').click()" _REGULAR_STYLE_>1 time</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1' id='NSSI1_2' onclick="document.getElementById('Q_NSSI1').style.color = 'black'; document.getElementById('N_NSSI1').style.color = 'black';" type='radio' value='2'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1_2').click()" _REGULAR_STYLE_>2 or 3 times</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1' id='NSSI1_3' onclick="document.getElementById('Q_NSSI1').style.color = 'black'; document.getElementById('N_NSSI1').style.color = 'black';" type='radio' value='3'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1_3').click()" _REGULAR_STYLE_>4 or 5 times</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1' id='NSSI1_4' onclick="document.getElementById('Q_NSSI1').style.color = 'black'; document.getElementById('N_NSSI1').style.color = 'black';" type='radio' value='4'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1_4').click()" _REGULAR_STYLE_>6 or more times</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1' class="nonrequired" id='NSSI1_H' type="radio" style="display:none" value='.'></td>
+            <td style='padding-left:3px'>
+                _END_ITEM_
+
+                _END_QUESTION_
+
+                <!--subquestion 1-->
+                <div id="Q1Q1" style="display: none; padding-left: 20px">
+                    _BEGIN_QUESTION_
+
+                    <tr><td id='N_NSSI1A' valign='top' style='color:#0066CC;font-weight:bold'>1a.</td><td colspan='2' id='Q_NSSI1A' class="question nonreq" style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'>Over the last 12 months, which methods have you used to hurt yourself?<td></tr>
+
+                    _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_0' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; Q_HMS1 = document.getElementsByName('NSSI1A'); for (i = 0; i < Q_HMS1.length; i++) { elementid = Q_HMS1[i].id; if (parseInt(elementid.substring(elementid.length - 1)) > 6) { Q_HMS1[i].checked = false; } };" type='checkbox' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_0').click()" _REGULAR_STYLE_>cutting or carving on skin</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_1' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; Q_HMS1 = document.getElementsByName('NSSI1A'); for (i = 0; i < Q_HMS1.length; i++) { elementid = Q_HMS1[i].id; if (parseInt(elementid.substring(elementid.length - 1)) > 6) { Q_HMS1[i].checked = false; } };" type='checkbox' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_1').click()" _REGULAR_STYLE_>picking at a wound</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_2' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; Q_HMS1 = document.getElementsByName('NSSI1A'); for (i = 0; i < Q_HMS1.length; i++) { elementid = Q_HMS1[i].id; if (parseInt(elementid.substring(elementid.length - 1)) > 6) { Q_HMS1[i].checked = false; } };" type='checkbox' value='2'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_2').click()" _REGULAR_STYLE_>hitting self</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_3' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; Q_HMS1 = document.getElementsByName('NSSI1A'); for (i = 0; i < Q_HMS1.length; i++) { elementid = Q_HMS1[i].id; if (parseInt(elementid.substring(elementid.length - 1)) > 6) { Q_HMS1[i].checked = false; } };" type='checkbox' value='3'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_3').click()" _REGULAR_STYLE_>scraping skin to draw blood</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_4' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; Q_HMS1 = document.getElementsByName('NSSI1A'); for (i = 0; i < Q_HMS1.length; i++) { elementid = Q_HMS1[i].id; if (parseInt(elementid.substring(elementid.length - 1)) > 6) { Q_HMS1[i].checked = false; } };" type='checkbox' value='4'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_4').click()" _REGULAR_STYLE_>biting self</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_5' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; Q_HMS1 = document.getElementsByName('NSSI1A'); for (i = 0; i < Q_HMS1.length; i++) { elementid = Q_HMS1[i].id; if (parseInt(elementid.substring(elementid.length - 1)) > 6) { Q_HMS1[i].checked = false; } };" type='checkbox' value='5'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_5').click()" _REGULAR_STYLE_>picking areas of the body to the point of drawing blood</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_6' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black';" type='checkbox' value='6'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_6').click()" _REGULAR_STYLE_>inserting objects under skin or nails</span>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_7' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black';" type='checkbox' value='7'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_7').click()" _REGULAR_STYLE_>tattooing self, burning skin</span>
+                _END_ITEM_
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_8' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black';" type='checkbox' value='8'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_8').click()" _REGULAR_STYLE_>pulling out one’s own hair</span>
+                _END_ITEM_
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_9' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black';" type='checkbox' value='9'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_9').click()" _REGULAR_STYLE_>erasing skin to draw blood</span>
+                _END_ITEM_
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' id='NSSI1A_10' onclick="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black';" type='checkbox' value='10'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('NSSI1A_10').click()" _REGULAR_STYLE_>other (detail below) </span>&nbsp;&nbsp;&nbsp;<input name='NSSI1A' id="NSSI1A_T" type='textbox' onkeydown="document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; document.getElementById('NSSI1A_10').checked = true;" style='border:none;border-bottom:1px solid black;background-color:#D3D3D3;text-align:center;width:150px'>
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td><input name='NSSI1A' class="nonrequired" id='NSSI1A_H' type="checkbox" style="display:none" value='.'></td>
+            <td style='padding-left:3px'>
+                _END_ITEM_
+
+
+                _END_QUESTION_
+        </div>
+
+        _MISSING_
+
+        _SUBMIT_BUTTON_NOT_REQUIRED_
+
+        </FORM>
+        </DIV>
+
+        <script type='text/javascript'>
+
+            $(document).ready(function () {
+                $('#NSSI1A_10').click(function () {
+                    $("#NSSI1A_T").val('');
+                });
+            });
+
+            var _missing = 0;
+            q1q1trigger = document.getElementsByName('NSSI1');
+            for (i = 0; i < q1q1trigger.length; i++) {
+                elementid = q1q1trigger[i].id;
+                position = elementid.substring(elementid.length - 1);
+                if (position!='H' && parseInt(position) > 0) {
+                    q1q1trigger[i].addEventListener('click',
+                        function (e) {
+                            Q_HMS1 = document.getElementsByName('NSSI1');
+                            for (i = 0; i < Q_HMS1.length; i++) {
+                                element = Q_HMS1[i];
+                                pos=element.id.substring(element.id.length - 1);
+                                if (pos!='H' && parseInt(pos) < 1) { element.checked = false; }
+                                else {
+                                    if (element.checked) { document.getElementById('Q1Q1').style.display = 'block' };
+                                }
+                            }
+                        });
+                }
+                else {
+                    // add function to clear the top 6 options
+                    q1q1trigger[i].addEventListener('click',
+                        function (e) {
+                            Q_HMS1 = document.getElementsByName('NSSI1');
+                            __clearOptions('NSSI1A');
+                            if (this.checked) {
+                                document.getElementById('Q1Q1').style.display = 'none';
+                                for (i = 0; i < Q_HMS1.length; i++) {
+                                    if (Q_HMS1[i].id != this.id && this.checked) { Q_HMS1[i].checked = false; }
+                                }
+                            }
+                        });
+                }
+            }
+
+            /*function __linkInputSpan(surveytype) {
+                // puts the onclick on the span so 
+                $('.question').each(
+                    function () {
+                        $(this).parent().parent().find('input').each(
+                            function () {
+                                //alert($(this).text);
+                                //alert('here');
+                                if ($(this).hasClass('nonrequired')) {
+                                    return;
+                                }
+                                else {
+                                    chkid = $(this).attr('id');
+                                    //alert(chkid);
+                                    spans = $('#' + chkid).parent().next().children();
+                                    for (i = 0; i < spans.length; i++) { $(spans[i]).click(function () { val = $('#' + chkid).prop('checked'); $('#'+chkid).prop('checked', !val)})}
+                                }
+                            })
+                    });
+            }*/
+
+            //__linkInputSpan('grid');
+
+            function __clearOptions(Identifier) {
+                elements = document.getElementsByName(Identifier);
+                for (i = 0; i < elements.length; i++) {
+                    if (elements[i].type == 'checkbox') elements[i].checked = false;
+                    else if (elements[i].type == 'text') elements[i].value = '';
+                 }
+                return true;
+            }
+
+            function __validatePage(Color) {
+                var globalPass = true;
+
+                localPass = false; for (var i = 0; i < document.forms[0].NSSI1.length; i++) { if (document.forms[0].NSSI1[i].checked == true) { localPass = true; break; } }
+                if (localPass == false) { globalPass = false; document.getElementById('Q_NSSI1').style.color = Color; document.getElementById('N_NSSI1').style.color = Color; }
+                else { document.getElementById('Q_NSSI1').style.color = 'black'; document.getElementById('N_NSSI1').style.color = 'black'; }
+                
+                if (!document.getElementById("NSSI1_0").checked) {
+                    localPass = false; for (var i = 0; i < document.forms[0].NSSI1A.length; i++) { if (document.forms[0].NSSI1A[i].checked == true) { localPass = true; break; } }
+                    if (localPass == false) { globalPass = false; document.getElementById('Q_NSSI1A').style.color = Color; document.getElementById('N_NSSI1A').style.color = Color; }
+                    else { document.getElementById('Q_NSSI1A').style.color = 'black'; document.getElementById('N_NSSI1A').style.color = 'black'; }
+                }
+
+                return globalPass;
+            }
+            function __clearHidden(self) {
+                $(".question.nonreq").each(
+                    function () {
+                        $(this).parent().parent().find("input").each(
+                        function () { if ($(this).attr('id') != self.id) $(this).prop('checked', false) })
+                    })
+            }
+            // goes through each element with class of question AND nonreq,
+            // for each question find the children that are inputs, loop through each and if all are unchecked, check the invisible one 
+            // which has a class of nonrequired. 
+            function __validateNonRequired() {
+                $(".question.nonreq").each(
+                    function () {
+                        complete = false;
+                        $(this).parent().parent().find("input").each(
+                            function () {
+                                if ($(this).prop('checked')) complete = true;
+                            });
+                        if (!complete) $(this).parent().parent().find("input.nonrequired").prop('checked', true);
+                    });
+            }
+
+        </script>

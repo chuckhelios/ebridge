@@ -1,0 +1,41 @@
+﻿<TABLE><TR><TD><IMG src="./question/PHQ9_HM.png" width='400px' height='60px'></TD><TD>_PROGRESSION_</TD></TR></TABLE><P>
+
+<DIV style='padding-left:15px'>
+<FORM method='post' action='action.aspx?p=data'>_INPUT_
+
+_BEGIN_TITLE_
+Over <U>the last 2 weeks...</U>
+_END_TITLE_
+
+_BEGIN_HORIZONTAL_QUESTION_TYPE3_
+
+<TR height='50px'><TD id='N_PHQ1' style='background-color:#CDCDCD;color:#0066CC;font-weight:bold'>1.</TD><TD id='Q_PHQ1' style='padding-left:16px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>If you are experiencing any emotional or behavioral problem(s), how difficult has this made it for you to do your work at school, take care of things at home or get along with other people?</TD>
+<TD align='center' onclick="document.getElementById('PHQ1_0').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_0' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='0'></TD>
+<TD align='center' onclick="document.getElementById('PHQ1_1').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_1' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='1'></TD>
+<TD align='center' onclick="document.getElementById('PHQ1_2').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_2' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='2'></TD>
+<TD align='center' onclick="document.getElementById('PHQ1_3').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_3' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='3'><INPUT name='PHQ1' type='radio' value='.' checked style='display:none'></TD>
+</TR>
+
+_END_QUESTION_
+
+<TABLE id='M' cellpadding='0' cellspacing='0' style='display:none;font-family:arial;font-size:12px;padding-right:10px;padding-bottom:10px'><TR height='20px'><TD style='padding:12px;color:#FFFFFF;background-color:#009900;font-weight:bold'>We noticed that you did not answer all of the questions. You may answer them now if you are willing to do so, or you can click NEXT again to proceed to the next section of the survey.</TD></TR></TABLE>
+
+_SUBMIT_BUTTON_NOT_REQUIRED_
+
+</FORM>
+</DIV>
+
+<SCRIPT type='text/javascript'>
+var _missing = 0;
+
+function __validatePage(Color)
+{
+	var globalPass = true;
+
+	localPass=false; for (var i=0; i<document.forms[0].PHQ1.length-1; i++){if (document.forms[0].PHQ1[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_PHQ1').style.color=Color;document.getElementById('N_PHQ1').style.color=Color;}
+	else {document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';}
+
+	return globalPass;
+}
+</SCRIPT>

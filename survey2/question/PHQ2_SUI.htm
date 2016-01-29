@@ -1,0 +1,83 @@
+﻿<TABLE><TR><TD><IMG src="./question/PHQ2_SUI.png" width='400px' height='60px'></TD><TD>_PROGRESSION_</TD></TR></TABLE><P>
+
+<DIV style='padding-left:15px'>
+<FORM method='post' action='action.aspx?p=data'>_INPUT_
+
+_BEGIN_TITLE_
+Over the <U>last 2 weeks</U>, how often have you been bothered by any of the following problems?
+_END_TITLE_
+
+_BEGIN_HORIZONTAL_QUESTION_
+
+<TR height='50px'><TD id='N_PHQ1' style='background-color:#CDCDCD;color:#0066CC;font-weight:bold'>1.</TD><TD id='Q_PHQ1' style='padding-left:16px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>Little interest or pleasure in doing things</TD>
+<TD align='center' onclick="document.getElementById('PHQ1_0').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_0' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='0'></TD>
+<TD align='center' onclick="document.getElementById('PHQ1_1').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_1' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='1'></TD>
+<TD align='center' onclick="document.getElementById('PHQ1_2').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_2' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='2'></TD>
+<TD align='center' onclick="document.getElementById('PHQ1_3').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ1' id='PHQ1_3' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='3'></TD>
+</TR>
+
+<TR height='50px'><TD id='N_PHQ2' style='background-color:#ECECEC;color:#0066CC;font-weight:bold'>2.</TD><TD id='Q_PHQ2' style='padding-left:16px;background-color:#ECECEC;color:#0066CC;font-weight:bold'>Feeling down, depressed or hopeless</TD>
+<TD align='center' onclick="document.getElementById('PHQ2_0').click()" _HORIZONTAL_STYLE_B_><INPUT name='PHQ2' id='PHQ2_0' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='0'></TD>
+<TD align='center' onclick="document.getElementById('PHQ2_1').click()" _HORIZONTAL_STYLE_B_><INPUT name='PHQ2' id='PHQ2_1' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='1'></TD>
+<TD align='center' onclick="document.getElementById('PHQ2_2').click()" _HORIZONTAL_STYLE_B_><INPUT name='PHQ2' id='PHQ2_2' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='2'></TD>
+<TD align='center' onclick="document.getElementById('PHQ2_3').click()" _HORIZONTAL_STYLE_B_><INPUT name='PHQ2' id='PHQ2_3' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='3'></TD>
+</TR>
+
+<TR height='50px'><TD id='N_PHQ9' valign='top' style='padding-top:10px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>3.</TD><TD id='Q_PHQ9' style='padding-left:16px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>Thoughts that you would be better off dead or of hurting yourself in some way</TD>
+<TD align='center' onclick="document.getElementById('PHQ9_0').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ9' id='PHQ9_0' onclick="document.getElementById('W').style.display='none';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='0'></TD>
+<TD align='center' onclick="document.getElementById('PHQ9_1').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ9' id='PHQ9_1' onclick="document.getElementById('W').style.display='block';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='1'></TD>
+<TD align='center' onclick="document.getElementById('PHQ9_2').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ9' id='PHQ9_2' onclick="document.getElementById('W').style.display='block';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='2'></TD>
+<TD align='center' onclick="document.getElementById('PHQ9_3').click()" _HORIZONTAL_STYLE_A_><INPUT name='PHQ9' id='PHQ9_3' onclick="document.getElementById('W').style.display='block';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='3'></TD>
+</TR>
+
+_END_QUESTION_
+
+_WARNING_
+
+_BEGIN_QUESTION_
+
+	<TR><TD id='N_SUI1' valign='top' style='color:#0066CC;font-weight:bold'>4.</TD><TD colspan='2' id='Q_SUI1' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>Have you attempted suicide <U>in the past two months</U>?</TD></TR>
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:10px'><INPUT name='SUI1' id='SUI1_0' onclick="document.getElementById('W2').style.display='block';document.getElementById('Q_SUI1').style.color='black';document.getElementById('N_SUI1').style.color='black';" type='radio' value='0'></TD>
+	<TD width='100%' style='padding-left:3px'><SPAN onclick="document.getElementById('SUI1_0').click()" _REGULAR_STYLE_>Yes</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:10px'><INPUT name='SUI1' id='SUI1_1' onclick="document.getElementById('W2').style.display='none';document.getElementById('Q_SUI1').style.color='black';document.getElementById('N_SUI1').style.color='black';" type='radio' value='1'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('SUI1_1').click()" _REGULAR_STYLE_>No</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	_END_ITEM_
+
+_END_QUESTION_
+
+<TABLE id='W2' cellpadding='0' cellspacing='0' style='display:none;font-family:arial;font-size:12px;padding-right:10px'><TR height='20px'><TD style='border:1px solid red;padding:8px'><B>Precautionary Note:</B> If you have serious thoughts of harming yourself, please dial "911," call Psychiatry Emergency Services at 734-996-4747, or go immediately to Psychiatric Emergency Services at the University of Michigan Hospital: University Hospital, 1500 East Medical Center Drive, Floor B1, Room B1B205.</TD></TR><TR height='20px'><TD></TD></TR></TABLE>
+
+_SUBMIT_BUTTON_REQUIRED_
+
+</FORM>
+</DIV>
+
+<SCRIPT type='text/javascript'>
+function __validatePage(Color)
+{
+	var globalPass = true;
+
+	localPass=false; for (var i=0; i<document.forms[0].PHQ1.length; i++){if (document.forms[0].PHQ1[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_PHQ1').style.color=Color;document.getElementById('N_PHQ1').style.color=Color;}
+	else {document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';}
+
+	localPass=false; for (var i=0; i<document.forms[0].PHQ2.length; i++){if (document.forms[0].PHQ2[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_PHQ2').style.color=Color;document.getElementById('N_PHQ2').style.color=Color;}
+	else {document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';}
+
+	localPass=false; for (var i=0; i<document.forms[0].PHQ2.length; i++){if (document.forms[0].PHQ9[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_PHQ9').style.color=Color;document.getElementById('N_PHQ9').style.color=Color;}
+	else {document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';}
+
+	localPass=false; for (var i=0; i<document.forms[0].SUI1.length; i++){if (document.forms[0].SUI1[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_SUI1').style.color=Color;document.getElementById('N_SUI1').style.color=Color;}
+	else {document.getElementById('Q_SUI1').style.color='black';document.getElementById('N_SUI1').style.color='black';}
+
+	return globalPass;
+}
+</SCRIPT>

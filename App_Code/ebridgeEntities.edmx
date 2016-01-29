@@ -1,0 +1,1026 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ebridge_3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACTIVITY_LOG">
+          <Key>
+            <PropertyRef Name="UNIQUE_ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="ACTIVITY_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="50" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="255" />
+          <Property Name="UNIQUE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AMAZON">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHAT_NOTICE">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+            <PropertyRef Name="PARTICIPANT_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="int" Nullable="false" />
+          <Property Name="PARTICIPANT_ID" Type="int" Nullable="false" />
+          <Property Name="DESIGNATION" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="CODEBOOK">
+          <Key>
+            <PropertyRef Name="TYPE" />
+          </Key>
+          <Property Name="TYPE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CODES" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="COUNSELOR">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="SITE" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME_FIRST" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME_LAST" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="SITE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FOLLOWUP_RESPONSE">
+          <Key>
+            <PropertyRef Name="PARTICIPANT_ID" />
+            <PropertyRef Name="QUESTION_CODE" />
+          </Key>
+          <Property Name="PARTICIPANT_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="QUESTION_CODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RESPONSE" Type="nvarchar(max)" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FOLLOWUP_RESPONSE_B">
+          <Key>
+            <PropertyRef Name="PARTICIPANT_ID" />
+            <PropertyRef Name="QUESTION_CODE" />
+          </Key>
+          <Property Name="PARTICIPANT_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="QUESTION_CODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RESPONSE" Type="nvarchar(max)" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GRID_REF">
+          <Key>
+            <PropertyRef Name="gid" />
+          </Key>
+          <Property Name="gid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="250" />
+          <Property Name="g_rank" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESSAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FROM_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="TO_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="MESSAGE_BODY" Type="nvarchar(max)" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="100" />
+          <Property Name="RESPONDING_TO" Type="int" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="MESSAGE_ALT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FROM_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="TO_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="MESSAGE_BODY" Type="nvarchar(max)" />
+          <Property Name="DATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="RESPONDING_TO" Type="int" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ONLINE_STATUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DESIGNATION" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SITE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAGE_REF">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="250" />
+          <Property Name="imageurl" Type="nvarchar" MaxLength="50" />
+          <Property Name="value" Type="nvarchar" MaxLength="10" />
+          <Property Name="survey" Type="nvarchar" MaxLength="20" />
+          <Property Name="hard_prompt" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="PARTICIPANT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NAME_FIRST" Type="nvarchar" MaxLength="50" />
+          <Property Name="GENDER" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="YEAR" Type="smallint" />
+          <Property Name="REMARK" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="QUESTION_REF">
+          <Key>
+            <PropertyRef Name="qid" />
+          </Key>
+          <Property Name="qid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="content" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="value" Type="nvarchar" MaxLength="10" />
+          <Property Name="hidden" Type="char" MaxLength="1" />
+          <Property Name="revealed_by" Type="int" />
+          <Property Name="grid_id" Type="int" />
+          <Property Name="hint" Type="nvarchar" MaxLength="200" />
+          <Property Name="layout" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="RESOURCE_LINK">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="SITE_ID" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="URL_TEXT" Type="nvarchar" MaxLength="100" />
+          <Property Name="URL" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADDTL_TEXT" Type="nvarchar" MaxLength="150" />
+          <Property Name="DATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="RANK" Type="int" Nullable="false" />
+          <Property Name="ACTIVE" Type="nvarchar" MaxLength="10" />
+          <Property Name="CREATED_BY" Type="nvarchar" MaxLength="5" />
+          <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RESPONSE_REF">
+          <Key>
+            <PropertyRef Name="rid" />
+          </Key>
+          <Property Name="rid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="content" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="value" Type="nvarchar" MaxLength="10" />
+          <Property Name="input_type" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="RESPONSE_X_QUESTION">
+          <Key>
+            <PropertyRef Name="rid" />
+            <PropertyRef Name="qid" />
+          </Key>
+          <Property Name="rid" Type="int" Nullable="false" />
+          <Property Name="qid" Type="int" Nullable="false" />
+          <Property Name="hidden" Type="char" MaxLength="1" />
+          <Property Name="excludes" Type="nvarchar" MaxLength="20" />
+          <Property Name="includes" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SCHEDULE">
+          <Key>
+            <PropertyRef Name="UNIQUE_ID" />
+          </Key>
+          <Property Name="UNIQUE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datetime_start" Type="datetime" />
+          <Property Name="datetime_end" Type="datetime" />
+          <Property Name="participant_id" Type="nvarchar" MaxLength="10" />
+          <Property Name="couselor_id" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SCREENING_RESPONSE">
+          <Key>
+            <PropertyRef Name="PARTICIPANT_ID" />
+            <PropertyRef Name="QUESTION_CODE" />
+          </Key>
+          <Property Name="PARTICIPANT_ID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="QUESTION_CODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="RESPONSE" Type="nvarchar(max)" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SITE">
+          <Key>
+            <PropertyRef Name="SID" />
+          </Key>
+          <Property Name="ID" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="HOURS" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DATE_TIME" Type="datetime" Nullable="false" />
+          <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STATUS">
+          <Key>
+            <PropertyRef Name="UNIQUE_ID" />
+          </Key>
+          <Property Name="UNIQUE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATUS_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="STATUS_VALUE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE_TIME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_FOLLOWUP_RESPONSE_B_PARTICIPANT">
+          <End Role="PARTICIPANT" Type="Self.PARTICIPANT" Multiplicity="1" />
+          <End Role="FOLLOWUP_RESPONSE_B" Type="Self.FOLLOWUP_RESPONSE_B" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARTICIPANT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FOLLOWUP_RESPONSE_B">
+              <PropertyRef Name="PARTICIPANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FOLLOWUP_RESPONSE_PARTICIPANT">
+          <End Role="PARTICIPANT" Type="Self.PARTICIPANT" Multiplicity="1" />
+          <End Role="FOLLOWUP_RESPONSE" Type="Self.FOLLOWUP_RESPONSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARTICIPANT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FOLLOWUP_RESPONSE">
+              <PropertyRef Name="PARTICIPANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gid_fk">
+          <End Role="GRID_REF" Type="Self.GRID_REF" Multiplicity="0..1" />
+          <End Role="QUESTION_REF" Type="Self.QUESTION_REF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRID_REF">
+              <PropertyRef Name="gid" />
+            </Principal>
+            <Dependent Role="QUESTION_REF">
+              <PropertyRef Name="grid_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gid_pid_fk">
+          <End Role="PAGE_REF" Type="Self.PAGE_REF" Multiplicity="1" />
+          <End Role="GRID_REF" Type="Self.GRID_REF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAGE_REF">
+              <PropertyRef Name="pid" />
+            </Principal>
+            <Dependent Role="GRID_REF">
+              <PropertyRef Name="pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pid_fk">
+          <End Role="PAGE_REF" Type="Self.PAGE_REF" Multiplicity="1" />
+          <End Role="QUESTION_REF" Type="Self.QUESTION_REF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAGE_REF">
+              <PropertyRef Name="pid" />
+            </Principal>
+            <Dependent Role="QUESTION_REF">
+              <PropertyRef Name="pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rinq_qid_fk">
+          <End Role="QUESTION_REF" Type="Self.QUESTION_REF" Multiplicity="1" />
+          <End Role="RESPONSE_X_QUESTION" Type="Self.RESPONSE_X_QUESTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUESTION_REF">
+              <PropertyRef Name="qid" />
+            </Principal>
+            <Dependent Role="RESPONSE_X_QUESTION">
+              <PropertyRef Name="qid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rinq_rid_fk">
+          <End Role="RESPONSE_REF" Type="Self.RESPONSE_REF" Multiplicity="1" />
+          <End Role="RESPONSE_X_QUESTION" Type="Self.RESPONSE_X_QUESTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESPONSE_REF">
+              <PropertyRef Name="rid" />
+            </Principal>
+            <Dependent Role="RESPONSE_X_QUESTION">
+              <PropertyRef Name="rid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCREENING_RESPONSE_Participant">
+          <End Role="PARTICIPANT" Type="Self.PARTICIPANT" Multiplicity="1" />
+          <End Role="SCREENING_RESPONSE" Type="Self.SCREENING_RESPONSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARTICIPANT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SCREENING_RESPONSE">
+              <PropertyRef Name="PARTICIPANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ebridge_3ModelStoreContainer">
+          <EntitySet Name="ACTIVITY_LOG" EntityType="Self.ACTIVITY_LOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AMAZON" EntityType="Self.AMAZON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHAT_NOTICE" EntityType="Self.CHAT_NOTICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CODEBOOK" EntityType="Self.CODEBOOK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COUNSELOR" EntityType="Self.COUNSELOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FOLLOWUP_RESPONSE" EntityType="Self.FOLLOWUP_RESPONSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FOLLOWUP_RESPONSE_B" EntityType="Self.FOLLOWUP_RESPONSE_B" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRID_REF" EntityType="Self.GRID_REF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MESSAGE" EntityType="Self.MESSAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MESSAGE_ALT" EntityType="Self.MESSAGE_ALT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ONLINE_STATUS" EntityType="Self.ONLINE_STATUS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAGE_REF" EntityType="Self.PAGE_REF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PARTICIPANT" EntityType="Self.PARTICIPANT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUESTION_REF" EntityType="Self.QUESTION_REF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESOURCE_LINK" EntityType="Self.RESOURCE_LINK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESPONSE_REF" EntityType="Self.RESPONSE_REF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESPONSE_X_QUESTION" EntityType="Self.RESPONSE_X_QUESTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCHEDULE" EntityType="Self.SCHEDULE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCREENING_RESPONSE" EntityType="Self.SCREENING_RESPONSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SITE" EntityType="Self.SITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATUS" EntityType="Self.STATUS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_FOLLOWUP_RESPONSE_B_PARTICIPANT" Association="Self.FK_FOLLOWUP_RESPONSE_B_PARTICIPANT">
+            <End Role="PARTICIPANT" EntitySet="PARTICIPANT" />
+            <End Role="FOLLOWUP_RESPONSE_B" EntitySet="FOLLOWUP_RESPONSE_B" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FOLLOWUP_RESPONSE_PARTICIPANT" Association="Self.FK_FOLLOWUP_RESPONSE_PARTICIPANT">
+            <End Role="PARTICIPANT" EntitySet="PARTICIPANT" />
+            <End Role="FOLLOWUP_RESPONSE" EntitySet="FOLLOWUP_RESPONSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gid_fk" Association="Self.FK_gid_fk">
+            <End Role="GRID_REF" EntitySet="GRID_REF" />
+            <End Role="QUESTION_REF" EntitySet="QUESTION_REF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gid_pid_fk" Association="Self.FK_gid_pid_fk">
+            <End Role="PAGE_REF" EntitySet="PAGE_REF" />
+            <End Role="GRID_REF" EntitySet="GRID_REF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pid_fk" Association="Self.FK_pid_fk">
+            <End Role="PAGE_REF" EntitySet="PAGE_REF" />
+            <End Role="QUESTION_REF" EntitySet="QUESTION_REF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rinq_qid_fk" Association="Self.FK_rinq_qid_fk">
+            <End Role="QUESTION_REF" EntitySet="QUESTION_REF" />
+            <End Role="RESPONSE_X_QUESTION" EntitySet="RESPONSE_X_QUESTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rinq_rid_fk" Association="Self.FK_rinq_rid_fk">
+            <End Role="RESPONSE_REF" EntitySet="RESPONSE_REF" />
+            <End Role="RESPONSE_X_QUESTION" EntitySet="RESPONSE_X_QUESTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCREENING_RESPONSE_Participant" Association="Self.FK_SCREENING_RESPONSE_Participant">
+            <End Role="PARTICIPANT" EntitySet="PARTICIPANT" />
+            <End Role="SCREENING_RESPONSE" EntitySet="SCREENING_RESPONSE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ebridge_3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACTIVITY_LOG">
+          <Key>
+            <PropertyRef Name="UNIQUE_ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVITY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="REMARK" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UNIQUE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="AMAZON">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHAT_NOTICE">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+            <PropertyRef Name="PARTICIPANT_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PARTICIPANT_ID" Type="Int32" Nullable="false" />
+          <Property Name="DESIGNATION" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CODEBOOK">
+          <Key>
+            <PropertyRef Name="TYPE" />
+          </Key>
+          <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CODES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="COUNSELOR">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="SITE" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_FIRST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME_LAST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SITE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FOLLOWUP_RESPONSE">
+          <Key>
+            <PropertyRef Name="PARTICIPANT_ID" />
+            <PropertyRef Name="QUESTION_CODE" />
+          </Key>
+          <Property Name="PARTICIPANT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QUESTION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RESPONSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PARTICIPANT" Relationship="Self.FK_FOLLOWUP_RESPONSE_PARTICIPANT" FromRole="FOLLOWUP_RESPONSE" ToRole="PARTICIPANT" />
+        </EntityType>
+        <EntityType Name="FOLLOWUP_RESPONSE_B">
+          <Key>
+            <PropertyRef Name="PARTICIPANT_ID" />
+            <PropertyRef Name="QUESTION_CODE" />
+          </Key>
+          <Property Name="PARTICIPANT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QUESTION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RESPONSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PARTICIPANT" Relationship="Self.FK_FOLLOWUP_RESPONSE_B_PARTICIPANT" FromRole="FOLLOWUP_RESPONSE_B" ToRole="PARTICIPANT" />
+        </EntityType>
+        <EntityType Name="GRID_REF">
+          <Key>
+            <PropertyRef Name="gid" />
+          </Key>
+          <Property Name="gid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="g_rank" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="QUESTION_REF" Relationship="Self.FK_gid_fk" FromRole="GRID_REF" ToRole="QUESTION_REF" />
+          <NavigationProperty Name="PAGE_REF" Relationship="Self.FK_gid_pid_fk" FromRole="GRID_REF" ToRole="PAGE_REF" />
+        </EntityType>
+        <EntityType Name="MESSAGE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FROM_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TO_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MESSAGE_BODY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RESPONDING_TO" Type="Int32" />
+          <Property Name="REMARK" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MESSAGE_ALT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FROM_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TO_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MESSAGE_BODY" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RESPONDING_TO" Type="Int32" />
+          <Property Name="REMARK" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ONLINE_STATUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESIGNATION" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SITE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAGE_REF">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="imageurl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="survey" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="hard_prompt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="GRID_REF" Relationship="Self.FK_gid_pid_fk" FromRole="PAGE_REF" ToRole="GRID_REF" />
+          <NavigationProperty Name="QUESTION_REF" Relationship="Self.FK_pid_fk" FromRole="PAGE_REF" ToRole="QUESTION_REF" />
+        </EntityType>
+        <EntityType Name="PARTICIPANT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME_FIRST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GENDER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YEAR" Type="Int16" />
+          <Property Name="REMARK" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FOLLOWUP_RESPONSE" Relationship="Self.FK_FOLLOWUP_RESPONSE_PARTICIPANT" FromRole="PARTICIPANT" ToRole="FOLLOWUP_RESPONSE" />
+          <NavigationProperty Name="FOLLOWUP_RESPONSE_B" Relationship="Self.FK_FOLLOWUP_RESPONSE_B_PARTICIPANT" FromRole="PARTICIPANT" ToRole="FOLLOWUP_RESPONSE_B" />
+          <NavigationProperty Name="SCREENING_RESPONSE" Relationship="Self.FK_SCREENING_RESPONSE_Participant" FromRole="PARTICIPANT" ToRole="SCREENING_RESPONSE" />
+        </EntityType>
+        <EntityType Name="QUESTION_REF">
+          <Key>
+            <PropertyRef Name="qid" />
+          </Key>
+          <Property Name="qid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <Property Name="content" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="hidden" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="revealed_by" Type="Int32" />
+          <Property Name="grid_id" Type="Int32" />
+          <Property Name="hint" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="layout" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GRID_REF" Relationship="Self.FK_gid_fk" FromRole="QUESTION_REF" ToRole="GRID_REF" />
+          <NavigationProperty Name="PAGE_REF" Relationship="Self.FK_pid_fk" FromRole="QUESTION_REF" ToRole="PAGE_REF" />
+          <NavigationProperty Name="RESPONSE_X_QUESTION" Relationship="Self.FK_rinq_qid_fk" FromRole="QUESTION_REF" ToRole="RESPONSE_X_QUESTION" />
+        </EntityType>
+        <EntityType Name="RESOURCE_LINK">
+          <Key>
+            <PropertyRef Name="RID" />
+          </Key>
+          <Property Name="SITE_ID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="URL_TEXT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADDTL_TEXT" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RANK" Type="Int32" Nullable="false" />
+          <Property Name="ACTIVE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="RESPONSE_REF">
+          <Key>
+            <PropertyRef Name="rid" />
+          </Key>
+          <Property Name="rid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="content" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="input_type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RESPONSE_X_QUESTION" Relationship="Self.FK_rinq_rid_fk" FromRole="RESPONSE_REF" ToRole="RESPONSE_X_QUESTION" />
+        </EntityType>
+        <EntityType Name="RESPONSE_X_QUESTION">
+          <Key>
+            <PropertyRef Name="rid" />
+            <PropertyRef Name="qid" />
+          </Key>
+          <Property Name="rid" Type="Int32" Nullable="false" />
+          <Property Name="qid" Type="Int32" Nullable="false" />
+          <Property Name="hidden" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="excludes" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="includes" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="QUESTION_REF" Relationship="Self.FK_rinq_qid_fk" FromRole="RESPONSE_X_QUESTION" ToRole="QUESTION_REF" />
+          <NavigationProperty Name="RESPONSE_REF" Relationship="Self.FK_rinq_rid_fk" FromRole="RESPONSE_X_QUESTION" ToRole="RESPONSE_REF" />
+        </EntityType>
+        <EntityType Name="SCHEDULE">
+          <Key>
+            <PropertyRef Name="UNIQUE_ID" />
+          </Key>
+          <Property Name="UNIQUE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datetime_start" Type="DateTime" Precision="3" />
+          <Property Name="datetime_end" Type="DateTime" Precision="3" />
+          <Property Name="participant_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="couselor_id" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SCREENING_RESPONSE">
+          <Key>
+            <PropertyRef Name="PARTICIPANT_ID" />
+            <PropertyRef Name="QUESTION_CODE" />
+          </Key>
+          <Property Name="PARTICIPANT_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="QUESTION_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RESPONSE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PARTICIPANT" Relationship="Self.FK_SCREENING_RESPONSE_Participant" FromRole="SCREENING_RESPONSE" ToRole="PARTICIPANT" />
+        </EntityType>
+        <EntityType Name="SITE">
+          <Key>
+            <PropertyRef Name="SID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HOURS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATE_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="STATUS">
+          <Key>
+            <PropertyRef Name="UNIQUE_ID" />
+          </Key>
+          <Property Name="UNIQUE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_VALUE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE_TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_FOLLOWUP_RESPONSE_PARTICIPANT">
+          <End Role="PARTICIPANT" Type="Self.PARTICIPANT" Multiplicity="1" />
+          <End Role="FOLLOWUP_RESPONSE" Type="Self.FOLLOWUP_RESPONSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARTICIPANT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FOLLOWUP_RESPONSE">
+              <PropertyRef Name="PARTICIPANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FOLLOWUP_RESPONSE_B_PARTICIPANT">
+          <End Role="PARTICIPANT" Type="Self.PARTICIPANT" Multiplicity="1" />
+          <End Role="FOLLOWUP_RESPONSE_B" Type="Self.FOLLOWUP_RESPONSE_B" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARTICIPANT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FOLLOWUP_RESPONSE_B">
+              <PropertyRef Name="PARTICIPANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gid_fk">
+          <End Role="GRID_REF" Type="Self.GRID_REF" Multiplicity="0..1" />
+          <End Role="QUESTION_REF" Type="Self.QUESTION_REF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRID_REF">
+              <PropertyRef Name="gid" />
+            </Principal>
+            <Dependent Role="QUESTION_REF">
+              <PropertyRef Name="grid_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gid_pid_fk">
+          <End Role="PAGE_REF" Type="Self.PAGE_REF" Multiplicity="1" />
+          <End Role="GRID_REF" Type="Self.GRID_REF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAGE_REF">
+              <PropertyRef Name="pid" />
+            </Principal>
+            <Dependent Role="GRID_REF">
+              <PropertyRef Name="pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pid_fk">
+          <End Role="PAGE_REF" Type="Self.PAGE_REF" Multiplicity="1" />
+          <End Role="QUESTION_REF" Type="Self.QUESTION_REF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAGE_REF">
+              <PropertyRef Name="pid" />
+            </Principal>
+            <Dependent Role="QUESTION_REF">
+              <PropertyRef Name="pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCREENING_RESPONSE_Participant">
+          <End Role="PARTICIPANT" Type="Self.PARTICIPANT" Multiplicity="1" />
+          <End Role="SCREENING_RESPONSE" Type="Self.SCREENING_RESPONSE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PARTICIPANT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SCREENING_RESPONSE">
+              <PropertyRef Name="PARTICIPANT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rinq_qid_fk">
+          <End Role="QUESTION_REF" Type="Self.QUESTION_REF" Multiplicity="1" />
+          <End Role="RESPONSE_X_QUESTION" Type="Self.RESPONSE_X_QUESTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUESTION_REF">
+              <PropertyRef Name="qid" />
+            </Principal>
+            <Dependent Role="RESPONSE_X_QUESTION">
+              <PropertyRef Name="qid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rinq_rid_fk">
+          <End Role="RESPONSE_REF" Type="Self.RESPONSE_REF" Multiplicity="1" />
+          <End Role="RESPONSE_X_QUESTION" Type="Self.RESPONSE_X_QUESTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESPONSE_REF">
+              <PropertyRef Name="rid" />
+            </Principal>
+            <Dependent Role="RESPONSE_X_QUESTION">
+              <PropertyRef Name="rid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ebridge_3Entities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACTIVITY_LOG" EntityType="Self.ACTIVITY_LOG" />
+          <EntitySet Name="AMAZON" EntityType="Self.AMAZON" />
+          <EntitySet Name="CHAT_NOTICE" EntityType="Self.CHAT_NOTICE" />
+          <EntitySet Name="CODEBOOK" EntityType="Self.CODEBOOK" />
+          <EntitySet Name="COUNSELOR" EntityType="Self.COUNSELOR" />
+          <EntitySet Name="FOLLOWUP_RESPONSE" EntityType="Self.FOLLOWUP_RESPONSE" />
+          <EntitySet Name="FOLLOWUP_RESPONSE_B" EntityType="Self.FOLLOWUP_RESPONSE_B" />
+          <EntitySet Name="GRID_REF" EntityType="Self.GRID_REF" />
+          <EntitySet Name="MESSAGE" EntityType="Self.MESSAGE" />
+          <EntitySet Name="MESSAGE_ALT" EntityType="Self.MESSAGE_ALT" />
+          <EntitySet Name="ONLINE_STATUS" EntityType="Self.ONLINE_STATUS" />
+          <EntitySet Name="PAGE_REF" EntityType="Self.PAGE_REF" />
+          <EntitySet Name="PARTICIPANT" EntityType="Self.PARTICIPANT" />
+          <EntitySet Name="QUESTION_REF" EntityType="Self.QUESTION_REF" />
+          <EntitySet Name="RESOURCE_LINK" EntityType="Self.RESOURCE_LINK" />
+          <EntitySet Name="RESPONSE_REF" EntityType="Self.RESPONSE_REF" />
+          <EntitySet Name="RESPONSE_X_QUESTION" EntityType="Self.RESPONSE_X_QUESTION" />
+          <EntitySet Name="SCHEDULE" EntityType="Self.SCHEDULE" />
+          <EntitySet Name="SCREENING_RESPONSE" EntityType="Self.SCREENING_RESPONSE" />
+          <EntitySet Name="SITE" EntityType="Self.SITE" />
+          <EntitySet Name="STATUS" EntityType="Self.STATUS" />
+          <AssociationSet Name="FK_FOLLOWUP_RESPONSE_PARTICIPANT" Association="Self.FK_FOLLOWUP_RESPONSE_PARTICIPANT">
+            <End Role="PARTICIPANT" EntitySet="PARTICIPANT" />
+            <End Role="FOLLOWUP_RESPONSE" EntitySet="FOLLOWUP_RESPONSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FOLLOWUP_RESPONSE_B_PARTICIPANT" Association="Self.FK_FOLLOWUP_RESPONSE_B_PARTICIPANT">
+            <End Role="PARTICIPANT" EntitySet="PARTICIPANT" />
+            <End Role="FOLLOWUP_RESPONSE_B" EntitySet="FOLLOWUP_RESPONSE_B" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gid_fk" Association="Self.FK_gid_fk">
+            <End Role="GRID_REF" EntitySet="GRID_REF" />
+            <End Role="QUESTION_REF" EntitySet="QUESTION_REF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gid_pid_fk" Association="Self.FK_gid_pid_fk">
+            <End Role="PAGE_REF" EntitySet="PAGE_REF" />
+            <End Role="GRID_REF" EntitySet="GRID_REF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pid_fk" Association="Self.FK_pid_fk">
+            <End Role="PAGE_REF" EntitySet="PAGE_REF" />
+            <End Role="QUESTION_REF" EntitySet="QUESTION_REF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCREENING_RESPONSE_Participant" Association="Self.FK_SCREENING_RESPONSE_Participant">
+            <End Role="PARTICIPANT" EntitySet="PARTICIPANT" />
+            <End Role="SCREENING_RESPONSE" EntitySet="SCREENING_RESPONSE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rinq_qid_fk" Association="Self.FK_rinq_qid_fk">
+            <End Role="QUESTION_REF" EntitySet="QUESTION_REF" />
+            <End Role="RESPONSE_X_QUESTION" EntitySet="RESPONSE_X_QUESTION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rinq_rid_fk" Association="Self.FK_rinq_rid_fk">
+            <End Role="RESPONSE_REF" EntitySet="RESPONSE_REF" />
+            <End Role="RESPONSE_X_QUESTION" EntitySet="RESPONSE_X_QUESTION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ebridge_3ModelStoreContainer" CdmEntityContainer="ebridge_3Entities2">
+          <EntitySetMapping Name="ACTIVITY_LOG">
+            <EntityTypeMapping TypeName="ebridge_3Model.ACTIVITY_LOG">
+              <MappingFragment StoreEntitySet="ACTIVITY_LOG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ACTIVITY_CODE" ColumnName="ACTIVITY_CODE" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+                <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AMAZON">
+            <EntityTypeMapping TypeName="ebridge_3Model.AMAZON">
+              <MappingFragment StoreEntitySet="AMAZON">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHAT_NOTICE">
+            <EntityTypeMapping TypeName="ebridge_3Model.CHAT_NOTICE">
+              <MappingFragment StoreEntitySet="CHAT_NOTICE">
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+                <ScalarProperty Name="PARTICIPANT_ID" ColumnName="PARTICIPANT_ID" />
+                <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CODEBOOK">
+            <EntityTypeMapping TypeName="ebridge_3Model.CODEBOOK">
+              <MappingFragment StoreEntitySet="CODEBOOK">
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="CODES" ColumnName="CODES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COUNSELOR">
+            <EntityTypeMapping TypeName="ebridge_3Model.COUNSELOR">
+              <MappingFragment StoreEntitySet="COUNSELOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="NAME_FIRST" ColumnName="NAME_FIRST" />
+                <ScalarProperty Name="NAME_LAST" ColumnName="NAME_LAST" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SITE" ColumnName="SITE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FOLLOWUP_RESPONSE">
+            <EntityTypeMapping TypeName="ebridge_3Model.FOLLOWUP_RESPONSE">
+              <MappingFragment StoreEntitySet="FOLLOWUP_RESPONSE">
+                <ScalarProperty Name="PARTICIPANT_ID" ColumnName="PARTICIPANT_ID" />
+                <ScalarProperty Name="QUESTION_CODE" ColumnName="QUESTION_CODE" />
+                <ScalarProperty Name="RESPONSE" ColumnName="RESPONSE" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FOLLOWUP_RESPONSE_B">
+            <EntityTypeMapping TypeName="ebridge_3Model.FOLLOWUP_RESPONSE_B">
+              <MappingFragment StoreEntitySet="FOLLOWUP_RESPONSE_B">
+                <ScalarProperty Name="PARTICIPANT_ID" ColumnName="PARTICIPANT_ID" />
+                <ScalarProperty Name="QUESTION_CODE" ColumnName="QUESTION_CODE" />
+                <ScalarProperty Name="RESPONSE" ColumnName="RESPONSE" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRID_REF">
+            <EntityTypeMapping TypeName="ebridge_3Model.GRID_REF">
+              <MappingFragment StoreEntitySet="GRID_REF">
+                <ScalarProperty Name="gid" ColumnName="gid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="g_rank" ColumnName="g_rank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGE">
+            <EntityTypeMapping TypeName="ebridge_3Model.MESSAGE">
+              <MappingFragment StoreEntitySet="MESSAGE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FROM_ID" ColumnName="FROM_ID" />
+                <ScalarProperty Name="TO_ID" ColumnName="TO_ID" />
+                <ScalarProperty Name="MESSAGE_BODY" ColumnName="MESSAGE_BODY" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+                <ScalarProperty Name="RESPONDING_TO" ColumnName="RESPONDING_TO" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGE_ALT">
+            <EntityTypeMapping TypeName="ebridge_3Model.MESSAGE_ALT">
+              <MappingFragment StoreEntitySet="MESSAGE_ALT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FROM_ID" ColumnName="FROM_ID" />
+                <ScalarProperty Name="TO_ID" ColumnName="TO_ID" />
+                <ScalarProperty Name="MESSAGE_BODY" ColumnName="MESSAGE_BODY" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+                <ScalarProperty Name="RESPONDING_TO" ColumnName="RESPONDING_TO" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ONLINE_STATUS">
+            <EntityTypeMapping TypeName="ebridge_3Model.ONLINE_STATUS">
+              <MappingFragment StoreEntitySet="ONLINE_STATUS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+                <ScalarProperty Name="SITE" ColumnName="SITE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAGE_REF">
+            <EntityTypeMapping TypeName="ebridge_3Model.PAGE_REF">
+              <MappingFragment StoreEntitySet="PAGE_REF">
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="imageurl" ColumnName="imageurl" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="survey" ColumnName="survey" />
+                <ScalarProperty Name="hard_prompt" ColumnName="hard_prompt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PARTICIPANT">
+            <EntityTypeMapping TypeName="ebridge_3Model.PARTICIPANT">
+              <MappingFragment StoreEntitySet="PARTICIPANT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME_FIRST" ColumnName="NAME_FIRST" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUESTION_REF">
+            <EntityTypeMapping TypeName="ebridge_3Model.QUESTION_REF">
+              <MappingFragment StoreEntitySet="QUESTION_REF">
+                <ScalarProperty Name="qid" ColumnName="qid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="hidden" ColumnName="hidden" />
+                <ScalarProperty Name="revealed_by" ColumnName="revealed_by" />
+                <ScalarProperty Name="grid_id" ColumnName="grid_id" />
+                <ScalarProperty Name="hint" ColumnName="hint" />
+                <ScalarProperty Name="layout" ColumnName="layout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESOURCE_LINK">
+            <EntityTypeMapping TypeName="ebridge_3Model.RESOURCE_LINK">
+              <MappingFragment StoreEntitySet="RESOURCE_LINK">
+                <ScalarProperty Name="SITE_ID" ColumnName="SITE_ID" />
+                <ScalarProperty Name="URL_TEXT" ColumnName="URL_TEXT" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="ADDTL_TEXT" ColumnName="ADDTL_TEXT" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+                <ScalarProperty Name="RANK" ColumnName="RANK" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESPONSE_REF">
+            <EntityTypeMapping TypeName="ebridge_3Model.RESPONSE_REF">
+              <MappingFragment StoreEntitySet="RESPONSE_REF">
+                <ScalarProperty Name="rid" ColumnName="rid" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="input_type" ColumnName="input_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESPONSE_X_QUESTION">
+            <EntityTypeMapping TypeName="ebridge_3Model.RESPONSE_X_QUESTION">
+              <MappingFragment StoreEntitySet="RESPONSE_X_QUESTION">
+                <ScalarProperty Name="rid" ColumnName="rid" />
+                <ScalarProperty Name="qid" ColumnName="qid" />
+                <ScalarProperty Name="hidden" ColumnName="hidden" />
+                <ScalarProperty Name="excludes" ColumnName="excludes" />
+                <ScalarProperty Name="includes" ColumnName="includes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCHEDULE">
+            <EntityTypeMapping TypeName="ebridge_3Model.SCHEDULE">
+              <MappingFragment StoreEntitySet="SCHEDULE">
+                <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+                <ScalarProperty Name="datetime_start" ColumnName="datetime_start" />
+                <ScalarProperty Name="datetime_end" ColumnName="datetime_end" />
+                <ScalarProperty Name="participant_id" ColumnName="participant_id" />
+                <ScalarProperty Name="couselor_id" ColumnName="couselor_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCREENING_RESPONSE">
+            <EntityTypeMapping TypeName="ebridge_3Model.SCREENING_RESPONSE">
+              <MappingFragment StoreEntitySet="SCREENING_RESPONSE">
+                <ScalarProperty Name="PARTICIPANT_ID" ColumnName="PARTICIPANT_ID" />
+                <ScalarProperty Name="QUESTION_CODE" ColumnName="QUESTION_CODE" />
+                <ScalarProperty Name="RESPONSE" ColumnName="RESPONSE" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SITE">
+            <EntityTypeMapping TypeName="ebridge_3Model.SITE">
+              <MappingFragment StoreEntitySet="SITE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HOURS" ColumnName="HOURS" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+                <ScalarProperty Name="SID" ColumnName="SID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUS">
+            <EntityTypeMapping TypeName="ebridge_3Model.STATUS">
+              <MappingFragment StoreEntitySet="STATUS">
+                <ScalarProperty Name="UNIQUE_ID" ColumnName="UNIQUE_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STATUS_CODE" ColumnName="STATUS_CODE" />
+                <ScalarProperty Name="STATUS_VALUE" ColumnName="STATUS_VALUE" />
+                <ScalarProperty Name="DATE_TIME" ColumnName="DATE_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

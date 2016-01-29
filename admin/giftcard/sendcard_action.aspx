@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="sendcard_action.aspx.cs" Inherits="admin_giftcard_sendcard_action" %>

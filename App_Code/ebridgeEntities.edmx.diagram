@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c733402569c408882202d4061a15d96" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="ebridge_3Model.ACTIVITY_LOG" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.AMAZON" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.CHAT_NOTICE" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.CODEBOOK" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.COUNSELOR" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.FOLLOWUP_RESPONSE" Width="1.5" PointX="10" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.FOLLOWUP_RESPONSE_B" Width="1.5" PointX="10" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.GRID_REF" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.MESSAGE" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.MESSAGE_ALT" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.ONLINE_STATUS" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.PAGE_REF" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.PARTICIPANT" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.QUESTION_REF" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.RESOURCE_LINK" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.RESPONSE_REF" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.RESPONSE_X_QUESTION" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.SCHEDULE" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.SCREENING_RESPONSE" Width="1.5" PointX="10" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.SITE" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ebridge_3Model.STATUS" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="ebridge_3Model.FK_FOLLOWUP_RESPONSE_PARTICIPANT" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_FOLLOWUP_RESPONSE_B_PARTICIPANT" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_gid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_gid_pid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_pid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_SCREENING_RESPONSE_Participant" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_rinq_qid_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="ebridge_3Model.FK_rinq_rid_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,77 @@
+﻿<TABLE><TR><TD><IMG src='./question/NC.png' width='400px' height='60px'></TD><TD>_PROGRESSION_</TD></TR></TABLE><P>
+
+<DIV style='padding-left:15px'>
+<FORM method='post' action='action.aspx?p=data'>_INPUT_
+
+_BEGIN_QUESTION_
+
+	<TR><TD id='N_ADQ1' valign='top' style='color:#0066CC;font-weight:bold'>1.</TD><TD colspan='2' id='Q_ADQ1' style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'>Please help us improve eBridge and let us know more about the reasons you did not connect with the online Counselor. <I style='font-weight:normal'>(Check all that apply)</I></TD></TR>
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px'><INPUT name='ADQ1' id='ADQ1_0' type='checkbox' value="No need for the online Counselor's help"></TD>
+	<TD width='100%' style='padding-left:3px'><SPAN onclick="document.getElementById('ADQ1_0').click()" _REGULAR_STYLE_>No need for the online Counselor's help</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px'><INPUT name='ADQ1' id='ADQ1_1' type='checkbox' value="I didn't think it would be helpful"></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('ADQ1_1').click()" _REGULAR_STYLE_>I didn't think it would be helpful</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px'><INPUT name='ADQ1' id='ADQ1_2' type='checkbox' value='Privacy or confidentiality concerns'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('ADQ1_2').click()" _REGULAR_STYLE_>Privacy or confidentiality concerns</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px'><INPUT name='ADQ1' id='ADQ1_3' type='checkbox' value='Too difficult or confusing to contact or communicate with the online Counselor'></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('ADQ1_3').click()" _REGULAR_STYLE_>Too difficult or confusing to contact or communicate with the online Counselor</SPAN>
+	_END_ITEM_
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px'><INPUT name='ADQ1' id='ADQ1_4' type='checkbox' value="I didn't have time"></TD>
+	<TD style='padding-left:3px'><SPAN onclick="document.getElementById('ADQ1_4').click()" _REGULAR_STYLE_>I didn't have time</SPAN>
+	_END_ITEM_
+
+_END_QUESTION_
+
+_BEGIN_QUESTION_
+
+	<TR><TD valign='top' style='color:#0066CC;font-weight:bold'>&nbsp;&nbsp;</TD><TD colspan='2' id='Q_ADQ2' style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:5px'><INPUT id='SE' type='checkbox'> <SPAN onclick="document.getElementById('SE').click()" _REGULAR_STYLE_>Something else?</SPAN></TD></TR>
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px' colspan='2'><TEXTAREA name='ADQ2' id='ADQ2' style='width:595px;height:100px;font-family:verdana;font-size:12px' onkeydown="document.getElementById('SE').checked = 'true'"></TEXTAREA></TD><TD>
+	_END_ITEM_
+
+_END_QUESTION_
+
+_BEGIN_QUESTION_
+
+	<TR><TD valign='top' style='color:#0066CC;font-weight:bold'>&nbsp;&nbsp;</TD><TD colspan='2' style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:5px'><INPUT id='BR' type='checkbox'> <SPAN onclick="document.getElementById('BR').click()" _REGULAR_STYLE_>What was the biggest reason for not connecting?</SPAN></TD></TR>
+
+	_BEGIN_ITEM_
+	<TD style='padding-left:2px' colspan='2'><TEXTAREA name='ADQ3' id='ADQ3' style='width:595px;height:100px;font-family:verdana;font-size:12px' onclick="document.getElementById('BR').checked = 'true'"></TEXTAREA></TD><TD>
+	_END_ITEM_
+
+_END_QUESTION_
+
+_MISSING_
+
+_SUBMIT_BUTTON_NOT_REQUIRED_
+
+</FORM>
+</DIV>
+
+<SCRIPT type='text/javascript'>
+_missing = 0;
+
+function __validatePage(Color)
+{
+	var globalPass = true;
+
+	localPass=false; for (var i=0; i<document.forms[0].ADQ1.length; i++){if (document.forms[0].ADQ1[i].checked==true) {localPass=true; break;}}
+	if (localPass==false) {globalPass=false; document.getElementById('Q_ADQ1').style.color=Color;document.getElementById('N_ADQ1').style.color=Color;}
+	else {}
+
+	return globalPass;
+}
+</SCRIPT>

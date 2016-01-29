@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+
+public partial class dialog_chat_appt : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string ParticipantId = Request.QueryString[0];
+        string CID = Utility.GetStatus(ParticipantId, "COUNSELOR");
+
+        string[][] _s = Db.GetRecords("SELECT unique_id, datetime_start, datetime_end FROM schedule WHERE couselor_id = '" + CID + "' AND participant_id IS NULL ORDER BY datetime_start");
+
+        Response.Write(PageElements.PageHeader("Plain").Replace("700px", "500px"));
+        Response.Write(PageElements.DrawMessageJHeader(2, 2, 400));
+
+        Response.Write("<TABLE width='500px' cellpadding='0' cellspacing='0' style='font-family:arial;font-size:12px'>"
+                + "<FORM method='post' action='action.aspx?p=add_chat_appt'>"
+                + "<INPUT type='hidden' name='PID' value='" + ParticipantId + "'>"
+                + "<TR><TD colspan='4'><SPAN " + PageElements.DrawMessage("AvailableTimes").Replace("text-underline-style:dotted", "text-underline-style:dotted;color:red") + ">To chat privately online</SPAN> with the Counselor, please choose one of the following available daytime and evening times.</TD></TR>"
+                + "<TR height='20px'><TD></TD></TR>"
+                + "<TR height='25px' style='font-weight:bold;background-color:#BBBBBB'><TD></TD><TD>Date</TD>"
+                + "<TD style='padding-right:20px'>Starting at</TD><TD style='padding-right:20px'>Duration</TD></TR>");
+
+        int _c = 0;// don't want to use Access' date function. Count how many can be displayed.
+        bool _no_records = true;
+
+        if (_s != null)
+        {
+            for (int i = 0; i < _s.Length; i++)
+            {
+                // only display future dates
+                if (DateTime.Parse(_s[i][1]).Date < DateTime.Now.Date) continue;
+
+                Response.Write("<TR height='25px' style='cursor:hand;background-color:#" + (i % 2 == 0 ? "DDDDDD" : "FFFFFF") + "' "
+                    + "onmouseover=\"this.style.backgroundColor='yellow'\" onmouseout=\"this.style.backgroundColor='#" + (i % 2 == 0 ? "DDDDDD" : "FFFFFF") + "'\" "
+                    + "onclick=\"document.getElementById('S" + _s[i][0] + "').click()\">"
+                    + "<TD style='padding-right:20px;padding-left:5px'><INPUT type='radio' name='S' id='S" + _s[i][0] + "' value='" + _s[i][0] + "'></TD>"
+                    + "<TD style='padding-right:10px'>" + formatDateTime(_s[i][1]) + "</TD>"
+                    + "<TD>" + DateTime.Parse(_s[i][1]).ToShortTimeString() + "</TD>"
+                    + "<TD style='padding-right:40px'>Usually an hour</TD>"
+                    + "</TR>");
+
+                Response.Flush();
+
+                _no_records = false;
+                _c++;
+            }
+        }
+        else
+        {
+            Response.Write("<TR height='15px'><TD></TD></TR>");
+            Response.Write("<TR><TD colspan='4'>No records found.</TD></TR>");
+        }
+
+        if (_c == 0 && _s != null)
+        {
+            Response.Write("<TR height='15px'><TD></TD></TR>");
+            Response.Write("<TR><TD colspan='4'>No records found.</TD></TR>");
+        }
+
+        Response.Write("<TR height='20px'><TD></TD></TR>");
+        Response.Write("<TR><TD colspan='4'><INPUT " + (_no_records?"disabled='disabled' ":"") + "type='submit' value='Schedule' style='font-size:12px;font-family:arial;padding-top:1px;padding-bottom:1px' "
+            + "onclick=\"if (!IsValid()) {return false;}\"></TD></TR>");
+
+        Response.Write("</FORM></TABLE>");
+
+        Response.Write(PageElements.PageFooter(false));
+
+        Response.Write("<SCRIPT type='text/javascript'>"
+            + "function IsValid() {"
+            + "if (document.forms[0].S.checked) return true;" 
+            + "for (var i=0; i<document.forms[0].S.length; i++){if (document.forms[0].S[i].checked) return true;}"
+            + "alert('Please select one of the aboev available daytime and evening times before proceed.');return false;}"
+            + "</SCRIPT>");
+    }
+
+    private string formatDateTime(string Input)
+    {
+        DateTime _d = DateTime.Parse(Input);
+
+        return _d.DayOfWeek + ", " + _d.ToShortDateString();
+    }
+}

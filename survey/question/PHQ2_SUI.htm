@@ -1,0 +1,240 @@
+﻿<TABLE><TR><TD><IMG src="./images/PHQ2_SUI.jpg" width='400px' height='60px'></TD><TD>_PROGRESSION_</TD></TR></TABLE><p>
+
+    <div style='padding-left:15px'>
+        <form method='post' action='action.aspx?p=data'>
+            _INPUT_
+
+            _BEGIN_TITLE_
+            Over the <u>last 2 weeks</u>, how often have you been bothered by any of the following problems?
+            _END_TITLE_
+
+            _BEGIN_HORIZONTAL_QUESTION_
+
+            <tr height='50px'>
+                <td id='N_PHQ1' style='background-color:#CDCDCD;color:#0066CC;font-weight:bold'>1.</td>
+                <td id='Q_PHQ1' style='padding-left:16px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>Little interest or pleasure in doing things</td>
+                <td align='center' onclick="document.getElementById('PHQ1_0').click()" _HORIZONTAL_STYLE_A_><input name='PHQ1' id='PHQ1_0' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='0'></td>
+                <td align='center' onclick="document.getElementById('PHQ1_1').click()" _HORIZONTAL_STYLE_A_><input name='PHQ1' id='PHQ1_1' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='1'></td>
+                <td align='center' onclick="document.getElementById('PHQ1_2').click()" _HORIZONTAL_STYLE_A_><input name='PHQ1' id='PHQ1_2' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='2'></td>
+                <td align='center' onclick="document.getElementById('PHQ1_3').click()" _HORIZONTAL_STYLE_A_><input name='PHQ1' id='PHQ1_3' onclick="document.getElementById('Q_PHQ1').style.color='black';document.getElementById('N_PHQ1').style.color='black';" type='radio' value='3'></td>
+            </tr>
+
+            <tr height='50px'>
+                <td id='N_PHQ2' style='background-color:#ECECEC;color:#0066CC;font-weight:bold'>2.</td>
+                <td id='Q_PHQ2' style='padding-left:16px;background-color:#ECECEC;color:#0066CC;font-weight:bold'>Feeling down, depressed or hopeless</td>
+                <td align='center' onclick="document.getElementById('PHQ2_0').click()" _HORIZONTAL_STYLE_B_><input name='PHQ2' id='PHQ2_0' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='0'></td>
+                <td align='center' onclick="document.getElementById('PHQ2_1').click()" _HORIZONTAL_STYLE_B_><input name='PHQ2' id='PHQ2_1' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='1'></td>
+                <td align='center' onclick="document.getElementById('PHQ2_2').click()" _HORIZONTAL_STYLE_B_><input name='PHQ2' id='PHQ2_2' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='2'></td>
+                <td align='center' onclick="document.getElementById('PHQ2_3').click()" _HORIZONTAL_STYLE_B_><input name='PHQ2' id='PHQ2_3' onclick="document.getElementById('Q_PHQ2').style.color='black';document.getElementById('N_PHQ2').style.color='black';" type='radio' value='3'></td>
+            </tr>
+
+            <tr height='50px'>
+                <td id='N_PHQ9' valign='top' style='padding-top:10px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>3.</td>
+                <td id='Q_PHQ9' style='padding-left:16px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>Thoughts that you would be better off dead or of hurting yourself in some way</td>
+                <td align='center' onclick="document.getElementById('PHQ9_0').click()" _HORIZONTAL_STYLE_A_><input name='PHQ9' id='PHQ9_0' onclick="document.getElementById('W').style.display='none';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='0'></td>
+                <td align='center' onclick="document.getElementById('PHQ9_1').click()" _HORIZONTAL_STYLE_A_><input name='PHQ9' id='PHQ9_1' onclick="document.getElementById('W').style.display='block';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='1'></td>
+                <td align='center' onclick="document.getElementById('PHQ9_2').click()" _HORIZONTAL_STYLE_A_><input name='PHQ9' id='PHQ9_2' onclick="document.getElementById('W').style.display='block';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='2'></td>
+                <td align='center' onclick="document.getElementById('PHQ9_3').click()" _HORIZONTAL_STYLE_A_><input name='PHQ9' id='PHQ9_3' onclick="document.getElementById('W').style.display='block';document.getElementById('Q_PHQ9').style.color='black';document.getElementById('N_PHQ9').style.color='black';" type='radio' value='3'></td>
+            </tr>
+
+            _END_QUESTION_
+
+            _WARNING_
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_SUI1' valign='top' style='color:#0066CC;font-weight:bold'>4.</td><td colspan='2' id='Q_SUI1' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>In the <u>past 12 months</u>, has there ever been a period of 2 weeks or more when you felt like you wanted to die?</td></tr>
+
+            _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI1' id='SUI1_0' onclick="document.getElementById('SUI2_1').checked=false;document.getElementById('Q2Q2').style.display = 'block';document.getElementById('Q_SUI1').style.color='black';document.getElementById('N_SUI1').style.color='black';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI1_0').click()" _REGULAR_STYLE_>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI1' id='SUI1_1' onclick="document.getElementById('SUI2_1').checked = true; document.getElementById('Q2Q2').style.display = 'none'; document.getElementById('Q_SUI1').style.color = 'black'; document.getElementById('N_SUI1').style.color = 'black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI1_1').click()" _REGULAR_STYLE_>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+            _END_QUESTION_
+
+
+            <div id='Q2Q2' style='display:none; padding-left:20px'>
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_SUI2' valign='top' style='color:#0066CC;font-weight:bold'>4a.</td><td colspan='2' id='Q_SUI2' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>In the <u>past month?</u></td></tr>
+
+                _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI2' id='SUI2_0' onclick="document.getElementById('Q_SUI2').style.color='black';document.getElementById('N_SUI2').style.color='black';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI2_0').click()" _REGULAR_STYLE_>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI2' id='SUI2_1' onclick="document.getElementById('Q_SUI2').style.color='black';document.getElementById('N_SUI2').style.color='black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI2_1').click()" _REGULAR_STYLE_>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _END_QUESTION_
+            </div>
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_SUI3' valign='top' style='color:#0066CC;font-weight:bold'>5.</td><td colspan='2' id='Q_SUI3' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>In the <u>past 12 months</u>, have you ever felt so low you thought about committing suicide?</td></tr>
+
+            _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI3' id='SUI3_0' onclick="document.getElementById('SUI4_1').checked = false; document.getElementById('W3').style.display = 'block';document.getElementById('Q4Q4').style.display = 'block';document.getElementById('Q_SUI3').style.color='black';document.getElementById('N_SUI3').style.color='black';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI3_0').click()" _REGULAR_STYLE_>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI3' id='SUI3_1' onclick="document.getElementById('SUI4_1').checked = true; document.getElementById('Q4Q4').style.display = 'none'; document.getElementById('W3').style.display = 'none'; document.getElementById('Q_SUI3').style.color = 'black'; document.getElementById('N_SUI3').style.color = 'black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI3_1').click()" _REGULAR_STYLE_>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _END_QUESTION_
+
+            <div id='Q4Q4' style='display:none; padding-left:20px'>
+
+                _BEGIN_QUESTION_
+
+                <tr><td id='N_SUI4' valign='top' style='color:#0066CC;font-weight:bold'>5a.</td><td colspan='2' id='Q_SUI4' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>In the <u>past month?</u></td></tr>
+
+                _BEGIN_ITEM_
+                <td style='padding-left:10px'><input name='SUI4' id='SUI4_0' onclick="document.getElementById('Q_SUI4').style.color='black';document.getElementById('N_SUI4').style.color='black';" type='radio' value='0'></td>
+                <td width='100%' style='padding-left:3px'>
+                    <span onclick="document.getElementById('SUI4_0').click()" _REGULAR_STYLE_>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    _END_ITEM_
+
+                    _BEGIN_ITEM_
+                <td style='padding-left:10px'><input name='SUI4' id='SUI4_1' onclick="document.getElementById('Q4Q6').style.display = 'none';document.getElementById('Q_SUI4').style.color='black';document.getElementById('N_SUI4').style.color='black';" type='radio' value='1'></td>
+                <td style='padding-left:3px'>
+                    <span onclick="document.getElementById('SUI4_1').click()" _REGULAR_STYLE_>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    _END_ITEM_
+
+
+                    _END_QUESTION_
+
+                    _WARNING3_
+
+                    
+
+            </div>
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_SUI5' valign='top' style='color:#0066CC;font-weight:bold'>6.</td><td colspan='2' id='Q_SUI5' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>In the <u>past 12 months,</u> have you ever attempted suicide?</td></tr>
+
+            _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI5' id='SUI5_0' onclick="document.getElementById('SUI6_1').checked = false; document.getElementById('Q6Q6').style.display = 'block'; document.getElementById('W2').style.display = 'block'; document.getElementById('Q_SUI5').style.color = 'black'; document.getElementById('N_SUI5').style.color = 'black'; document.getElementById('SUI7_T').value = '';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI5_0').click()" _REGULAR_STYLE_>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            _END_ITEM_
+
+            _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI5' id='SUI5_1' onclick="document.getElementById('SUI6_1').checked = true; document.getElementById('Q6Q6').style.display = 'none'; document.getElementById('W2').style.display = 'none'; document.getElementById('Q_SUI5').style.color = 'black'; document.getElementById('N_SUI5').style.color = 'black'; document.getElementById('SUI7_T').value = 0;" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI5_1').click()" _REGULAR_STYLE_>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _END_QUESTION_
+
+            <div id='Q6Q6' style='display: none; padding-left: 20px'>
+                _BEGIN_QUESTION_
+
+            <tr><td id='N_SUI6' valign='top' style='color:#0066CC;font-weight:bold'>6a.</td><td colspan='2' id='Q_SUI6' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>In the <u>past month?</u></td></tr>
+
+                _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI6' id='SUI6_0' onclick="document.getElementById('Q_SUI6').style.color='black';document.getElementById('N_SUI6').style.color='black';" type='radio' value='0'></td>
+            <td width='100%' style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI6_0').click()" _REGULAR_STYLE_>Yes</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _BEGIN_ITEM_
+            <td style='padding-left:10px'><input name='SUI6' id='SUI6_1' onclick="document.getElementById('Q_SUI6').style.color='black';document.getElementById('N_SUI6').style.color='black';" type='radio' value='1'></td>
+            <td style='padding-left:3px'>
+                <span onclick="document.getElementById('SUI6_1').click()" _REGULAR_STYLE_>No</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                _END_ITEM_
+
+                _END_QUESTION_
+
+
+                _BEGIN_QUESTION_
+
+            <tr><td id='N_SUI7' valign='top' style='color:#0066CC;font-weight:bold'>6b.</td><td colspan='2' id='Q_SUI7' style='color:#0066CC;font-weight:bold;padding-left:16px;padding-bottom:10px'>How many times have you attempted suicide <u>in your lifetime?</u></td></tr>
+
+            _BEGIN_ITEM_    
+            <td style='padding-left:10px'>
+            <span _REGULAR_STYLE_>Number of suicide attempts:</span>&nbsp;&nbsp;&nbsp;<input name='SUI7' value="" id='SUI7_T' type='textbox' onkeydown="document.getElementById('N_SUI7').style.color='black';document.getElementById('Q_SUI7').style.color='black';" style='border:none;border-bottom:1px solid black;background-color:#D3D3D3;text-align:center;width:150px' onclick='this.select()'>
+            _END_ITEM_
+
+            _END_QUESTION_
+
+            _WARNING2_
+            </div>
+    
+            
+            <!--<table id='W2' cellpadding='0' cellspacing='0' style='display:none;font-family:arial;font-size:12px;padding-right:10px'><tr height='20px'><td style='border:1px solid red;padding:8px'><b>Precautionary Note:</b> If you have serious thoughts of harming yourself, please dial "911," call Psychiatry Emergency Services at 734-996-4747, or go immediately to Psychiatric Emergency Services at the University of Michigan Hospital: University Hospital, 1500 East Medical Center Drive, Floor B1, Room B1B205.</td></tr><tr height='20px'><td></td></tr></table>-->
+
+            _SUBMIT_BUTTON_REQUIRED_
+
+            </FORM>
+            </div>
+
+            <script type='text/javascript'>
+
+            function __isNumber(n) {
+                return !isNaN(parseInt(n)) && isFinite(n);
+            }
+
+            function __validatePage(Color) {
+            var globalPass = true;
+
+            localPass = false; for (var i = 0; i < document.forms[0].PHQ1.length; i++) { if (document.forms[0].PHQ1[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_PHQ1').style.color = Color; document.getElementById('N_PHQ1').style.color = Color; }
+            else { document.getElementById('Q_PHQ1').style.color = 'black'; document.getElementById('N_PHQ1').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].PHQ2.length; i++) { if (document.forms[0].PHQ2[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_PHQ2').style.color = Color; document.getElementById('N_PHQ2').style.color = Color; }
+            else { document.getElementById('Q_PHQ2').style.color = 'black'; document.getElementById('N_PHQ2').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].PHQ2.length; i++) { if (document.forms[0].PHQ9[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_PHQ9').style.color = Color; document.getElementById('N_PHQ9').style.color = Color; }
+            else { document.getElementById('Q_PHQ9').style.color = 'black'; document.getElementById('N_PHQ9').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].SUI1.length; i++) { if (document.forms[0].SUI1[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI1').style.color = Color; document.getElementById('N_SUI1').style.color = Color; }
+            else { document.getElementById('Q_SUI1').style.color = 'black'; document.getElementById('N_SUI1').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].SUI2.length; i++) { if (document.forms[0].SUI2[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI2').style.color = Color; document.getElementById('N_SUI2').style.color = Color; }
+            else { document.getElementById('Q_SUI2').style.color = 'black'; document.getElementById('N_SUI2').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].SUI3.length; i++) { if (document.forms[0].SUI3[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI3').style.color = Color; document.getElementById('N_SUI3').style.color = Color; }
+            else { document.getElementById('Q_SUI3').style.color = 'black'; document.getElementById('N_SUI3').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].SUI4.length; i++) { if (document.forms[0].SUI4[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI4').style.color = Color; document.getElementById('N_SUI4').style.color = Color; }
+            else { document.getElementById('Q_SUI4').style.color = 'black'; document.getElementById('N_SUI4').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].SUI5.length; i++) { if (document.forms[0].SUI5[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI5').style.color = Color; document.getElementById('N_SUI5').style.color = Color; }
+            else { document.getElementById('Q_SUI5').style.color = 'black'; document.getElementById('N_SUI5').style.color = 'black'; }
+
+            localPass = false; for (var i = 0; i < document.forms[0].SUI6.length; i++) { if (document.forms[0].SUI6[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI6').style.color = Color; document.getElementById('N_SUI6').style.color = Color; }
+            else { document.getElementById('Q_SUI6').style.color = 'black'; document.getElementById('N_SUI6').style.color = 'black'; }
+
+            localPass = false; if (document.forms[0].SUI7.value != null && document.forms[0].SUI7.value != "") { if (__isNumber(document.forms[0].SUI7.value)) { localPass = true; } else { alert("please enter a valid number for question 6b"); localPass = false; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_SUI7').style.color = Color; document.getElementById('N_SUI7').style.color = Color; }
+            else { document.getElementById('Q_SUI7').style.color = 'black'; document.getElementById('N_SUI7').style.color = 'black'; }
+
+            return globalPass;
+            }
+            </script>

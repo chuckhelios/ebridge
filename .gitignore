@@ -1,0 +1,26 @@
+# Source #
+####################
+*.sh
+
+# Packages #
+####################
+*.7z
+*.zip
+
+# Logs and databases #
+####################
+*.log
+
+# Fonts #
+####################
+*.ttf
+
+# Configs #
+####################
+*.config
+
+# Specific Files #
+####################
+
+/App_Test
+/App_Script

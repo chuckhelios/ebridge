@@ -1,0 +1,59 @@
+﻿<table><tr><td><img src='./images/QUAL.jpg' width='400px' height='60px'></td><td>_PROGRESSION_</td></tr></table><p>
+
+    <div style='padding-left:15px'>
+        <form method='post' action='action.aspx?p=data'>
+            _INPUT_
+
+            _BEGIN_QUESTION_
+
+            <tr><td id='N_QUAL1' valign='top' style='color:#0066CC;font-weight:bold'>1.</td><td colspan='2' class='question nonreq' id='Q_QUAL1' style='color:#0066CC;font-weight:bold;padding-left:6px;padding-bottom:10px'>During the past 6 months, what would have lead you to seek (or helped you in seeking) mental health services (e.g., counseling, therapy, medication treatment)?</tr>
+
+            _BEGIN_ITEM_
+            <td><textarea name='QUAL1' id='QUAL1_0' style="width: 457px; height: 50px; font-family: verdana; font-size: 11px;" onclick="document.getElementById('Q_QUAL1').style.color = 'black'; document.getElementById('N_QUAL1').style.color = 'black';"></textarea></td>
+
+            _END_ITEM_
+
+            _END_QUESTION_
+
+            <table id='M' cellpadding='0' cellspacing='0' style='display:none;font-family:arial;font-size:12px;padding-right:10px;padding-bottom:10px'><tr height='20px'><td style='padding:12px;color:#FFFFFF;background-color:#009900;font-weight:bold'>We noticed that you did not answer all of the questions. You may answer them now if you are willing to do so, or you can click NEXT again to proceed to the next section of the survey.</td></tr></table>
+            _SUBMIT_BUTTON_NOT_REQUIRED_
+
+        </form>
+    </div>
+
+    <script type='text/javascript'>
+
+        var _missing = 0;
+
+        function __validatePage(Color) {
+            var globalPass = true;
+
+            localPass = false;
+            if (document.forms[0].QUAL1.value == '') { globalPass = false; document.getElementById('Q_QUAL1').style.color = Color; document.getElementById('N_QUAL1').style.color = Color; }
+            else { document.getElementById('Q_QUAL1').style.color = 'black'; document.getElementById('N_QUAL1').style.color = 'black'; }
+
+            return globalPass;
+        }
+
+        function __clearHidden(self) {
+            $(".question.nonreq").each(
+                function () {
+                    $(this).parent().parent().find("input").each(
+                    function () { if ($(this).attr('id') != self.id) $(this).prop('checked', false) })
+                })
+        }
+        // goes through each element with class of question AND nonreq,
+        // for each question find the children that are inputs, loop through each and if all are unchecked, check the invisible one
+        // which has a class of nonrequired.
+        function __validateNonRequired() {
+            $(".question.nonreq").each(
+                function () {
+                    complete = false;
+                    $(this).parent().parent().find("input").each(
+                        function () {
+                            if ($(this).prop('checked')) complete = true;
+                        });
+                    if (!complete) $(this).parent().parent().find("input.nonrequired").prop('checked', true);
+                });
+        }
+    </script>

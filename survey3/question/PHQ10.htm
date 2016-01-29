@@ -1,0 +1,66 @@
+﻿<table><tr><td><img src="./images/PHQ10.jpg" width='400px' height='60px'></td><td>_PROGRESSION_</td></tr></table><p>
+    <div style='padding-left:15px'>
+        <form method='post' action='action.aspx?p=data'>
+            _INPUT_
+
+                _BEGIN_TITLE_
+                In the <u>last 2 weeks</u>...
+                _END_TITLE_
+
+                _BEGIN_HORIZONTAL_PHQ10_
+
+                <tr height='95px'>
+                    <td id='N_PHQ101' valign='top' style='padding-top:0px;background-color:#CDCDCD;color:#0066CC;font-weight:bold; padding-top:10px'>1.</td>
+                    <td id='Q_PHQ101' class="question nonreq"  style='padding-left:16px;background-color:#CDCDCD;color:#0066CC;font-weight:bold'>If you are experiencing any emotional or behavioral problem(s), how difficult has this made it for you to do your work at school, take care of things at home or get along with other people?</td>
+                    <td align='center' onclick="document.getElementById('PHQ101_0').click()" _HORIZONTAL_STYLE_A_><input name='PHQ101' id='PHQ101_0' onclick="document.getElementById('Q_PHQ101').style.color='black';document.getElementById('N_PHQ101').style.color='black';" type='radio' value='0'></td>
+                    <td align='center' onclick="document.getElementById('PHQ101_1').click()" _HORIZONTAL_STYLE_A_><input name='PHQ101' id='PHQ101_1' onclick="document.getElementById('Q_PHQ101').style.color='black';document.getElementById('N_PHQ101').style.color='black';" type='radio' value='1'></td>
+                    <td align='center' onclick="document.getElementById('PHQ101_2').click()" _HORIZONTAL_STYLE_A_><input name='PHQ101' id='PHQ101_2' onclick="document.getElementById('Q_PHQ101').style.color='black';document.getElementById('N_PHQ101').style.color='black';" type='radio' value='2'></td>
+                    <td align='center' onclick="document.getElementById('PHQ101_3').click()" _HORIZONTAL_STYLE_A_><input name='PHQ101' id='PHQ101_3' onclick="document.getElementById('Q_PHQ101').style.color='black';document.getElementById('N_PHQ101').style.color='black';" type='radio' value='3'></td>
+                    <td align='center' style="display:none" _HORIZONTAL_STYLE_A_><input name='PHQ101' class="nonrequired" id='PHQ101_H' type='radio' value='.'></td>
+                </tr>
+
+                _END_QUESTION_
+
+                <table id='M' cellpadding='0' cellspacing='0' style='display:none;font-family:arial;font-size:12px;padding-right:10px;padding-bottom:10px'><tr height='20px'><td style='padding:12px;color:#FFFFFF;background-color:#009900;font-weight:bold'>We noticed that you did not answer all of the questions. You may answer them now if you are willing to do so, or you can click NEXT again to proceed to the next section of the survey.</td></tr></table>
+
+                _SUBMIT_BUTTON_NOT_REQUIRED_
+
+        </form>
+    </div>
+    <script type='text/javascript'>
+        var _missing = 0;
+
+        function __validatePage(Color) {
+            var globalPass = true;
+
+            localPass = false; for (var i = 0; i < document.forms[0].PHQ101.length; i++) { if (document.forms[0].PHQ101[i].checked == true) { localPass = true; break; } }
+            if (localPass == false) { globalPass = false; document.getElementById('Q_PHQ101').style.color = Color; document.getElementById('N_PHQ101').style.color = Color; }
+            else { document.getElementById('Q_PHQ101').style.color = 'black'; document.getElementById('N_PHQ101').style.color = 'black'; }
+
+            return globalPass;
+        }
+        function __clearHidden(self) {
+            $(".question.nonreq").each(
+                function () {
+                    $(this).parent().find("input").each(
+                    function () { if ($(this).attr('id') != self.id) $(this).prop('checked', false) })
+                })
+        }
+        // goes through each element with class of question AND nonreq,
+        // for each question find the children that are inputs, loop through each and if all are unchecked, check the invisible one 
+        // which has a class of nonrequired. 
+        function __validateNonRequired() {
+            $(".question.nonreq").each(
+                function () {
+                    //alert($(this).attr('id'));
+                    complete = false;
+                    $(this).parent().find("input").each(
+                        function () {
+                            //alert($(this).attr('id'));
+                            if ($(this).prop('checked')) complete = true;
+                        });
+                    if (!complete) $(this).parent().find("input.nonrequired").prop('checked', true);
+                });
+
+        }
+    </script>
